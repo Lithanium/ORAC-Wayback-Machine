@@ -1,0 +1,11 @@
+body {
+    background-color: transparent; /* Set background color for the entire popup */
+    font-family: Arial, sans-serif; /* Optional: Set font family */
+  }
+  
+  .container {
+    background-color: #aaffaa; /* Set background color for the container */
+    padding: 30px; /* Add padding to the container */
+    border-radius: 20px; /* Optional: Add border radius for rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
+  }

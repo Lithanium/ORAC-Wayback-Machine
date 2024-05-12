@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "ORAC Restore",
+  "version": "1.0",
+  "description": "Restores the verdict to what it should be",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://orac2.info/*", "https://orac.amt.edu.au/*"],
+      "js": ["content.js"]
+    }
+  ],
+	"action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
+

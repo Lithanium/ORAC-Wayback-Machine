@@ -1,0 +1,20 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>ORAC Restoration</title>
+    <link rel = "stylesheet" href = "style.css">
+  </head>
+  <body style="min-width:400px">
+    <div class = "container">
+        <h1>This extension restores ORAC</h1>
+        <button id = "About Me">(dev debugging button)</button>
+        <p>After the horrendous acts by AMT, our beloved ORAC feedback has been wildly scrambled. We deserve the images of our childhood. With the extension, we <b>will</b> not conform to this forced change.</p>
+    </div>
+  </body>
+  <script src="popup.js"></script>
+</html>
