@@ -1,11 +1,65 @@
 body {
-    background-color: transparent; /* Set background color for the entire popup */
-    font-family: Arial, sans-serif; /* Optional: Set font family */
-  }
-  
-  .container {
-    background-color: #aaffaa; /* Set background color for the container */
-    padding: 30px; /* Add padding to the container */
-    border-radius: 20px; /* Optional: Add border radius for rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
-  }
+  background-color: #d3ffd3; /* Set background color for the entire popup */
+  font-family: Arial, sans-serif; /* Optional: Set font family */
+}
+
+.container {
+  background-color: #aaffaa; /* Set background color for the container */
+  padding: 30px; /* Add padding to the container */
+  border-radius: 20px; /* Optional: Add border radius for rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22.67px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 22.67px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17.33px;
+  width: 17.33px;
+  left: 2.67px;
+  bottom: 2.67px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(17.33px); 
+  -ms-transform: translateX(17.33px);
+  transform: translateX(17.33px);
+}
