@@ -17,23 +17,28 @@ function replaceText(element) {
   });
 }
 
-// Replace text on the page load
-replaceText(document.body);
+var toggleState = localStorage.getItem("toggle");
+console.log(toggleState);
 
-// Observe and replace text in any dynamically loaded content
-const observer = new MutationObserver(mutations => {
-  mutations.forEach(mutation => {
-    if (mutation.type === "childList") {
-      mutation.addedNodes.forEach(node => {
-        if (node.nodeType === 1) { // Check if it's an element node
-          replaceText(node);
-        }
-      });
-    }
+if (toggleState != 'false') {
+  // Replace text on the page load
+  replaceText(document.body);
+
+  // Observe and replace text in any dynamically loaded content
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      if (mutation.type === "childList") {
+        mutation.addedNodes.forEach(node => {
+          if (node.nodeType === 1) { // Check if it's an element node
+            replaceText(node);
+          }
+        });
+      }
+    });
   });
-});
 
-observer.observe(document.body, {
-  childList: true,
-  subtree: true
-});
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+}
