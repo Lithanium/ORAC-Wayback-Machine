@@ -1,18 +1,24 @@
 {
   "manifest_version": 3,
-  "name": "ORAC Restore",
-  "version": "1.0",
-  "description": "Restores the verdict to what it should be",
-  "permissions": ["activeTab"],
+  "name": "ORAC Helper",
+  "version": "1.3",
+  "description": "Restores the verdict to what it should be. Major bug fixes: no longer breaks the submissions",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
-      "matches": ["https://orac2.info/*", "https://orac.amt.edu.au/*"],
+      "matches": ["https://orac2.info/problem/*/submission/*", "https://orac.amt.edu.au/problem/*/submission/*"],
       "js": ["content.js"]
     }
   ],
 	"action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
+  },
+  "icons": {
+    "512": "icon.png"
   }
 }
 
